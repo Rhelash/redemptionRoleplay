@@ -1,0 +1,17 @@
+name: RedemptionRoleplay
+main: com.redemptionroleplay.RedemptionRoleplay.RedemptionRoleplay
+version: 0.1A
+commands:
+    police:
+        description: Changes the player's group to Police.
+        usage: /police
+        permission: roleplay.police
+        permission-message: [RedemptionRoleplay] You are not a member of the police force! Ask an officer to find out how to join!
+permissions:
+    roleplay.*:
+        description: Gives access to all roleplay commands.
+        children:
+            roleplay.police: true
+    roleplay.police:
+        description: Gives access to the police command.
+        default: op

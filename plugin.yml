@@ -1,0 +1,33 @@
+name: RedemptionRoleplay
+main: com.redemptionroleplay.RedemptionRoleplay.RedemptionRoleplay
+version: 0.1A
+commands:
+    chelp:
+        description: Citizen help commands list.
+        usage: /chelp
+    drugs:
+        description: Drugs commands.
+        usage: /drugs
+    co:
+        description: Correctional Officers commands.
+        usage: /co
+    pdgate:
+        description: PD Gate commands
+        usage: /pdgate
+    fine:
+        description: Fine commands category.
+        usage: /fine
+    police:
+        description: Police commands.
+        usage: /police
+    staff:
+        description: Staff commands.
+        usage: /staff
+permissions:
+    roleplay.*:
+        description: Gives access to all roleplay commands.
+        children:
+            roleplay.police: true
+    roleplay.police:
+        description: Gives access to the police command.
+        default: op
