@@ -16,6 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+//TODO: Cleanup class
 public class RedemptionRoleplayEventListener implements Listener{
 	
 	public RedemptionRoleplayEventListener(RedemptionRoleplay plugin) {

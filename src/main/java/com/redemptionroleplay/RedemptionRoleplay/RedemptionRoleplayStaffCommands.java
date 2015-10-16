@@ -29,6 +29,7 @@ public class RedemptionRoleplayStaffCommands implements CommandExecutor{
 
 				if(args[0].equalsIgnoreCase("mod") || args[0].equalsIgnoreCase("moderator")){
 					if(player.hasPermission("staff.moderator") || player.hasPermission("staff.*")){
+					// TODO: Move this to the "ModeratorPlayer" constructor {
 						if(RedemptionRoleplay.policeList.contains(player)){
 							Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "clear " + player.getName());
 							player.getInventory().setHelmet(new ItemStack(Material.AIR, 1));
@@ -50,6 +51,7 @@ public class RedemptionRoleplayStaffCommands implements CommandExecutor{
 							player.sendMessage("[RedemptionRoleplay] You are now an §7OFF DUTY Correctional-Officer (Citizen)!");
 							Bukkit.broadcastMessage("§5Correctional-Officer " + player.getName() + " has switched to §7OFF DUTY.");
 						}
+					// } END
 						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "pex user " + player.getName() + " group set Moderator");
 						player.sendMessage("[RedemptionRoleplay] You have been added to the §3Moderator §fgroup!");
 					}else{
@@ -57,6 +59,7 @@ public class RedemptionRoleplayStaffCommands implements CommandExecutor{
 					}
 				}else if(args[0].equalsIgnoreCase("admin") || args[0].equalsIgnoreCase("administrator")){
 					if(player.hasPermission("staff.administrator") || player.hasPermission("staff.*")){
+					// TODO: Move this to the "AdminPlayer constructor {
 						if(RedemptionRoleplay.policeList.contains(player)){
 							Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "clear " + player.getName());
 							player.getInventory().setHelmet(new ItemStack(Material.AIR, 1));
@@ -78,6 +81,7 @@ public class RedemptionRoleplayStaffCommands implements CommandExecutor{
 							player.sendMessage("[RedemptionRoleplay] You are now an §7OFF DUTY Correctional-Officer (Citizen)!");
 							Bukkit.broadcastMessage("§5Correctional-Officer " + player.getName() + " has switched to §7OFF DUTY.");
 						}
+					// } END
 						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), "pex user " + player.getName() + " group set Administrator");
 						player.sendMessage("[RedemptionRoleplay] You have been added to the §9Administrator §fgroup!");
 					}else{

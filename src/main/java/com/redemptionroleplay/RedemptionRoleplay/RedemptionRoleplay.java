@@ -1,5 +1,6 @@
 package com.redemptionroleplay.RedemptionRoleplay;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -8,6 +9,18 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class RedemptionRoleplay extends JavaPlugin{
+	
+	static String[] validCommands = {
+		"police",
+		"pdgate",
+		"co",
+		"staff",
+		"chelp",
+		"fine",
+		"drugs"
+	};
+	
+	
 	static ArrayList<Player> policeList = new ArrayList<Player>();
 	static ArrayList<Player> policeSupervisorList = new ArrayList<Player>();
 	static ArrayList<Player> coList = new ArrayList<Player>();
@@ -22,19 +35,17 @@ public class RedemptionRoleplay extends JavaPlugin{
 	static HashMap<Player,Integer> drugsPriceList = new HashMap<Player,Integer>();
 	static HashMap<Player,Player> drugsNameList = new HashMap<Player,Player>();
 	
+	
 	@Override
 	public void onEnable(){
 		getLogger().info("[RedemptionRoleplay] Version: " + Bukkit.getVersion() + " has been enabled.");
 		new RedemptionRoleplayEventListener(this);
-		//Command Instances
-		this.getCommand("police").setExecutor(new RedemptionRoleplayPoliceCommands(this));
-		this.getCommand("pdgate").setExecutor(new RedemptionRoleplayPoliceCommands(this));
-		this.getCommand("co").setExecutor(new RedemptionRoleplayPrisonCommands(this));
-		this.getCommand("staff").setExecutor(new RedemptionRoleplayStaffCommands(this));
-		this.getCommand("chelp").setExecutor(new RedemptionRoleplayCommandExecutor(this));
-		this.getCommand("fine").setExecutor(new RedemptionRoleplayCommandExecutor(this));
-		this.getCommand("drugs").setExecutor(new RedemptionRoleplayCommandExecutor(this));
+		
+		for(int iii = 0; iii < Array.getLength(validCommands) ; iii++) {
+			this.getCommand(validCommands[iii]).setExecutor(new CommandHandler(validCommands));
+		}
 	}
+	
 	@Override
 	public void onDisable(){
 		getLogger().info("[RedemptionRoleplay] Version: " + Bukkit.getVersion() + " has been disabled.");

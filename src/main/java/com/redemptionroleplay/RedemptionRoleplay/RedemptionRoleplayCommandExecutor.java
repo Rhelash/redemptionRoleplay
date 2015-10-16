@@ -8,7 +8,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
-
+//TODO: Collapse PoliceCommands, PrisonCommands and StaffCommands into this class
+//      through new classes to contain command functionality for different player
+//      roles.
 public class RedemptionRoleplayCommandExecutor implements CommandExecutor{
 
 	@SuppressWarnings("unused")
@@ -21,7 +23,6 @@ public class RedemptionRoleplayCommandExecutor implements CommandExecutor{
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
 		//CITIZEN COMMANDS
-
 		if (cmd.getName().equalsIgnoreCase("chelp")){
 			if(sender instanceof Player){
 				Player player = (Player) sender;
