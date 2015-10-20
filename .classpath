@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Joshua/Downloads/craftbukkit-1.8.8.jar"/>
+	<classpathentry kind="lib" path="/Users/Luke1/Desktop/Spigot Minecraft Server/craftbukkit-1.8.8.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
